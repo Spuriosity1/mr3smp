@@ -3,7 +3,7 @@ project('mrrr', ['c', 'fortran'],
   meson_version : '>=1.2',
   default_options : ['c_std=c11'])
 
-# Options to mimic your make.inc flags
+
 
 # Collect headers (not strictly required by Meson, but good for IDEs)
 include = include_directories('INCLUDE')
@@ -51,7 +51,10 @@ cflags = ['-DNDEBUG', '-O3', '-g', '-pthread']
 if get_option('complex_support')
   cflags += ['-DCOMPLEX_SUPPORTED']
 endif
-if not get_option('spinlock_support')
+
+# check if spinlocks work
+compiler = meson.get_compiler('c')
+if not compiler.compiles('pthread_spinlock_t lock', name:'spinlock check')
   cflags += ['-DNOSPINLOCKS']
 endif
 
