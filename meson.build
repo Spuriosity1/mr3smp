@@ -68,7 +68,7 @@ libmrrr = static_library('mrrr',
 
 
 mr3smp_dep = declare_dependency(
-  link_with : mr3smp_lib,
+  link_with : libmrrr,
   include_directories : include
 )
 
