@@ -1,0 +1,3 @@
+option('complex_support', type : 'boolean', value : false, description : 'Enable complex support')
+option('spinlock_support', type : 'boolean', value : true, description : 'Enable spinlock support')
+option('build_examples', type: 'boolean', value : false, description : 'Builds examples') 

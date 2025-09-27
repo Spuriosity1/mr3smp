@@ -33,9 +33,15 @@ int main(int argc, char **argv)
   /* Others */
   int     info;
 
+  if (argc == 1){
+      printf("Error: specify a matrix with a datafile");
+      return 1;
+  }
+  printf("Reading matrix data from file %s",argv[1]);
+
   /* Read in data from file, space for D and E will
    * be allocated and needs to be freed at the end */
-  n = read_tri_mat("./Wilkinson21.data", &D, &E);
+  n = read_tri_mat(argv[1], &D, &E);
 
   /* Print input */
   printf("\n%% Input matrix:\n\n");

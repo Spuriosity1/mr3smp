@@ -14,7 +14,7 @@ LIBPATH = ../../../LIB
 
 # Otherwise
 LAPACKPATH = 
-LIBS = mrrr gfortran m pthread rt
+LIBS = mrrr gfortran m pthread 
 
 
 ######################## do not edit below ###########################
