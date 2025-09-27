@@ -67,6 +67,11 @@ libmrrr = static_library('mrrr',
 )
 
 
+mr3smp_dep = declare_dependency(
+  link_with : mr3smp_lib,
+  include_directories : include
+)
+
 if get_option('build_examples')
   subdir('EXAMPLES')
 endif
